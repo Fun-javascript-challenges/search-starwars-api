@@ -1,0 +1,158 @@
+body {
+    background-color: #242424;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+  }
+  .card-title {
+    background-color: #333333;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 50px auto;
+    max-width: 600px;
+    padding: 20px;
+    text-align: left;
+  }
+  h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .fade-in {
+    animation: fadeIn 2.3s ease-in-out;
+    
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* api cards */
+
+  #api-cards-film, #api-cards-people{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .card {
+    color: #1b1b1b;
+    width: 190px;
+    height: 254px;
+    position: relative;
+    outline: 6px solid #f5f5f5;
+    border-radius: 8px;
+    line-height: 150%;
+    padding: 16px;
+    color: white;;
+    background: #ff4b0f;
+    background-blend-mode: multiply;
+    background-blend-mode: multiply;
+    background: linear-gradient(to top, #ff4b0f, #600b0b);
+    /* background: linear-gradient(to top, #ff930f, #ffcc33); */
+    transition: background-color 1s ease-in-out;
+    overflow: hidden;
+  }
+  
+  .card-front {
+    bottom: 16px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-back {
+    transform: translateX(120%);
+    transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+   
+  }
+  .card-back p{
+    font-size: 16px
+  }
+  
+  
+  /*Text*/
+  .title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    position: inherit;
+    z-index: 999;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+
+  }
+  
+  .api-card-img-container{
+    height: 274px;
+  }
+  
+  .api-card-img-container img{
+    width: 100%;
+    object-fit: cover;
+  
+  }
+  
+  /*Hover*/
+  .card:hover {
+    background-color: #1b1b1b25;
+  }
+  
+  .card:hover .card-front {
+    transform: translateX(-100%);
+  }
+  
+  .card:hover .card-back {
+    transform: translateX(0);
+  }
+  
+/* api cards  end here */
+
+/* search bar */
+
+.container-input {
+  position: relative;
+  margin-top: 35px;
+}
+
+.input {
+  width: 150px;
+  padding: 10px 0px 10px 40px;
+  border-radius: 9999px;
+  border: solid 1px #333;
+  transition: all .2s ease-in-out;
+  outline: none;
+  opacity: 0.8;
+}
+
+/* .container-input svg {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0, -50%);
+} */
+
+.input:focus {
+  opacity: 1;
+  width: 250px;
+}
+
+/* search bar ends here */
+  
