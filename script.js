@@ -1,10 +1,9 @@
 let apiCardsFilm = document.getElementById('api-cards-film')
 let filmsURL = 'https://swapi.dev/api/films/';
+const loader = document.getElementById("loader");
 
-
-
-
-fetch(filmsURL)
+try {
+    fetch(filmsURL)
 .then(Response => Response.json())
 .then(data => {
     let films = data.results
@@ -33,6 +32,7 @@ fetch(filmsURL)
 
        
         let cards = document.querySelectorAll('.card')
+        loader.style.display = "none"
         
 
         searchItems(cards)  
@@ -40,12 +40,19 @@ fetch(filmsURL)
  
     
 });
+} catch (error) {
+    apiCardsFilm.innerHTML = `<div class="error-message">${error.message}</div>`;
+    loader.style.display = "none"
+}
+loader.style.display = "block"
 
 
-let apiCardsCharacters = document.getElementById('api-cards-people');
+
+let apiCardsCharacters = document.getElementById('api-cards-character');
 let charactersURL = 'https://swapi.dev/api/people/';
 let character = ""
-
+const loaderCharacter = document.getElementById("loaderCharacter");
+try {
 fetch(charactersURL)
 .then(Response => Response.json())
 .then(data => {
@@ -73,22 +80,28 @@ fetch(charactersURL)
             </div>
         </div>
         ` 
+        
         let cards = document.querySelectorAll('.card')
-
+        loaderCharacter.style.display = "none"
         searchItems(cards)
        
     } 
    
      
-        /* console.log(characters[i]) */
-    
-    
+        /* console.log(characters[i]) */  
 });
+
+} catch (error) {
+    loaderCharacter.style.display = "none"      
+}
+loaderCharacter.style.display = "block" 
+
 
 let apiCardsPlanets = document.getElementById('api-cards-planet');
 let planetsURL = 'https://swapi.dev/api/planets/';
 let planet = ""
-
+const loaderPlanet = document.getElementById("loaderPlanet");
+try {
 fetch(planetsURL)
 .then(Response => Response.json())
 .then(data => {
@@ -115,17 +128,20 @@ fetch(planetsURL)
             </div>
         </div>
         ` 
+        
         let cards = document.querySelectorAll('.card')
-
+        loaderPlanet.style.display = "none"
         searchItems(cards)
        
-    } 
-   
-     
-        /* console.log(characters[i]) */
-    
-    
+    }       
+    /* console.log(characters[i]) */   
 });
+
+} catch (error) {
+    loaderPlanet.style.display = "none"
+}
+loaderPlanet.style.display = "block"
+
 
 /* functionality for search */
 
