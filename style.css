@@ -37,11 +37,16 @@ body {
 
   /* api cards */
 
-  #api-cards-film, #api-cards-people{
+  #api-cards-film, #api-cards-people, #api-cards-planet{
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
+  }
+
+  .characters-h2, .planets-h2{
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 
   .card {
@@ -59,9 +64,10 @@ body {
     background-blend-mode: multiply;
     background: linear-gradient(to top, #ff4b0f, #600b0b);
     /* background: linear-gradient(to top, #ff930f, #ffcc33); */
-    transition: background-color 1s ease-in-out;
     overflow: hidden;
+    transition: all 0.3s ease-in-out;
   }
+
   
   .card-front {
     bottom: 16px;
@@ -106,6 +112,7 @@ body {
   
   .api-card-img-container img{
     width: 100%;
+    min-height: 308px;
     object-fit: cover;
   
   }
